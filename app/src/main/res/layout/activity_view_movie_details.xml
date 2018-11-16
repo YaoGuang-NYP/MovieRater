@@ -10,8 +10,8 @@
 
     <ImageView android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:layout_weight="0.7"
-               android:src="@drawable/Movie_Icon"/>
+               android:layout_weight="0.8"
+               android:src="@drawable/movieicon"/>
 
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="match_parent"
@@ -27,53 +27,59 @@
         <LinearLayout android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:orientation="vertical"
+                      android:weightSum="1"
                       android:layout_weight="0.9">
 
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:text="Title:"/>
+                      android:text="Title:"
+                      android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
 
-            <TextView android:layout_width="wrap_content"
+            <TextView android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:id="@+id/tvTitle"
                       android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
 
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:text="Overview:"/>
+                      android:text="Overview:"
+                      android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
 
-            <TextView android:layout_width="wrap_content"
+            <TextView android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:id="@+id/tvOverview"
                       android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
 
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:text="Language:"/>
+                      android:text="Language:"
+                      android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
 
-            <TextView android:layout_width="wrap_content"
+            <TextView android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:id="@+id/tvLanguage"
                       android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
 
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:text="Release Date:"/>
+                      android:text="Release Date:"
+                      android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
 
-            <TextView android:layout_width="wrap_content"
+            <TextView android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:id="@+id/tvReleaseDate"
                       android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
 
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:text="Suitable for children below 13:"/>
+                      android:text="Suitable for children below 13:"
+                      android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
 
-            <TextView android:layout_width="wrap_content"
+            <TextView android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:id="@+id/tvSuitability"
                       android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
-            
+
 
         </LinearLayout>
 
