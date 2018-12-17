@@ -50,6 +50,24 @@
                       android:id="@+id/tvOverview"
                       android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
+            <TextView android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:text="Reviews:"/>
+
+            <RatingBar android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:id="@+id/ratingBar"
+                       android:numStars="5"
+                       android:stepSize="0.5"
+                       android:isIndicator="true"
+                       android:visibility="gone"/>
+
+            <TextView android:id="@+id/tvReview"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:text="No Reviews yet. \n Long press here to add your review."
+                      android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:text="Language:"

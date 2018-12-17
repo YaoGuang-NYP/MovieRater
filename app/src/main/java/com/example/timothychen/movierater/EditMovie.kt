@@ -1,44 +1,41 @@
 package com.example.timothychen.movierater
 
-import com.example.timothychen.movierater.MovieEntity
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.content.Intent
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.*
+import android.view.View
+import android.widget.CheckBox
+import android.widget.EditText
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import kotlinx.android.synthetic.main.activity_main.*
 
-class AddMovie : AppCompatActivity() {
-
+class EditMovie : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        supportActionBar
+        setContentView(R.layout.activity_edit_movie)
 
-        val rbEnglish = findViewById<RadioButton>(R.id.rbEnglish)
-        rbEnglish.isChecked = true
-    }
+        var movieEntity = applicationContext as MovieEntity
 
-    // Hide Checkboxes
-    fun btnHideCheckbox(v:View){
-        val chkbx = findViewById<CheckBox>(R.id.chkbxNotSuitable)
-        if (chkbx.isChecked){
-            chkbxLangUsed.visibility = View.VISIBLE
-            chkbxViolence.visibility = View.VISIBLE
-        }
-        else {
-            chkbxLangUsed.visibility = View.INVISIBLE
-            chkbxViolence.visibility = View.INVISIBLE
-        }
+        val title = findViewById<EditText>(R.id.etMovieTitle)
+        val description = findViewById<EditText>(R.id.etShortDescription)
+        val release_date = findViewById<EditText>(R.id.etReleaseDate)
+
+        // Set text value for respective EditText
+        // Value taken from MovieEntity class
+        title.setText(movieEntity.title)
+        description.setText(movieEntity.description)
+        release_date.setText(movieEntity.release_date)
+
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.add_movie_menu, menu)
+        menuInflater.inflate(R.menu.edit_movie_menu, menu)
         return super.onCreateOptionsMenu(menu)
-
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
@@ -89,18 +86,13 @@ class AddMovie : AppCompatActivity() {
 
         }
 
-        if(item?.itemId == R.id.miClear)
-        {
-            title.text.clear()
-            description.text.clear()
-            release_date.text.clear()
-            rbEnglish.isChecked = true
-            chkbxNotSuitable.isChecked = false
-            chkbxLangUsed.visibility = View.INVISIBLE
-            chkbxViolence.visibility = View.INVISIBLE
+        else if (item?.itemId == R.id.miCancel){
+            val intent = Intent(this,LandingPage::class.java)
+            startActivity(intent)
         }
 
         return super.onOptionsItemSelected(item)
 
     }
+
 }
